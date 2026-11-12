@@ -37,13 +37,21 @@ export default async function DashboardPage() {
         <LogoutButton />
       </header>
 
-      <div className="mt-8">
+      <div className="mt-8 flex flex-wrap gap-3">
         <Link
           href="/leave/request"
           className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90"
         >
           Request leave
         </Link>
+        {profile?.role === "manager" && (
+          <Link
+            href="/manager/leave-requests"
+            className="inline-flex h-10 items-center justify-center rounded-md border px-4 text-sm font-medium shadow-sm hover:bg-accent"
+          >
+            Manager Approvals
+          </Link>
+        )}
       </div>
 
       {profileError ? (
