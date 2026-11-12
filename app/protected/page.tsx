@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import Link from "next/link";
 
 import { createClient } from "@/lib/supabase/server";
 import { InfoIcon } from "lucide-react";
@@ -19,6 +20,12 @@ async function UserDetails() {
 export default function ProtectedPage() {
   return (
     <div className="flex-1 w-full flex flex-col gap-12">
+      <Link
+        href="/dashboard"
+        className="w-fit rounded-md border px-4 py-2 text-sm font-medium hover:bg-accent"
+      >
+        Go to employee dashboard
+      </Link>
       <div className="w-full">
         <div className="bg-accent text-sm p-3 px-5 rounded-md text-foreground flex gap-3 items-center">
           <InfoIcon size="16" strokeWidth={2} />
